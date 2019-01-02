@@ -21,6 +21,7 @@ $router->get('hello[/{name}]', function ($name = null) {
 });
 
 
-$router->post('/', function () {
-	return 'Hello';
+$router->post('/', function (Illuminate\Http\Request $request) {
+	$slug = $request->input('slug');
+	return $slug;
 });
